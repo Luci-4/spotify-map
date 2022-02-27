@@ -4,7 +4,6 @@ require('dotenv').config();
 var axios = require('axios').default;
 const spotify_my_client_id = process.env.SPOTIFY_MY_CLIENT_ID;
 const spotify_my_client_secret = process.env.SPOTIFY_MY_CLIENT_SECRET;
-var access_token;
 
 router.get('/access', function(req, res) {
     const url =  'https://accounts.spotify.com/api/token'
@@ -26,8 +25,8 @@ router.get('/access', function(req, res) {
             headers
         )
         .then(response => {
-            access_token = response.data.access_token
-            res.send()
+            const access_token = response?.data?.access_token || ""
+            res.send(access_token)
         })
         .catch(error => {
             console.error(error)
@@ -35,8 +34,9 @@ router.get('/access', function(req, res) {
         })
 })
 
-router.get('/artist/:query', async function(req, res) {
+router.get('/:accesstoken/artist/:query', async function(req, res) {
     const artistName = req.params.query
+    const access_token = req.params.accesstoken
     const url = "https://api.spotify.com/v1/search"
     const params = {
         q: artistName,
@@ -46,7 +46,6 @@ router.get('/artist/:query', async function(req, res) {
     const headers = {
         headers: {
             "Authorization": `Bearer ${access_token}`,
-            // 'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
     }
@@ -57,11 +56,38 @@ router.get('/artist/:query', async function(req, res) {
             headers
         )
         .then(response => {
-            res.json(response.data.artists.items)
+            const items = response?.data?.artists?.items || []
+            res.json(items)
         }) 
         .catch(error => {
             console.error(error)
             res.status(502).json()
         })
 })
+router.get("/:accesstoken/relatedartists/:id", async function(req, res) {
+    const id = req.params.id
+    const access_token = req.params.accesstoken
+    const url = `https://api.spotify.com/v1/artists/${id}/related-artists`
+    const headers = {
+        headers: {
+            "Authorization": `Bearer ${access_token}`,
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const relatedRes = axios
+        .get(
+            url,
+            headers
+        )
+        .then(response => {
+            const artists = response?.data?.artists || [];
+            res.json(artists)
+        })
+        .catch(error => {
+            console.error(error)
+            res.status(502).json()
+        })
+})
+
 module.exports = router;
