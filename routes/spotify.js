@@ -30,8 +30,38 @@ router.get('/access', function(req, res) {
             res.send()
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
             res.status(502).send()
+        })
+})
+
+router.get('/artist/:query', async function(req, res) {
+    const artistName = req.params.query
+    const url = "https://api.spotify.com/v1/search"
+    const params = {
+        q: artistName,
+        type: "artist",
+        limit: "50"
+    }
+    const headers = {
+        headers: {
+            "Authorization": `Bearer ${access_token}`,
+            // 'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const searchRes = axios
+        .get(
+            `${url}?${new URLSearchParams(params).toString()}`,
+            headers
+        )
+        .then(response => {
+            res.json(response.data.artists.items)
+        }) 
+        .catch(error => {
+            console.error(error)
+            res.status(502).json()
         })
 })
 module.exports = router;
