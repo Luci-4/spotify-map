@@ -12,5 +12,17 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luci-4/spotify-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luci-4/spotify-map/issues"
+  },
+  "homepage": "https://github.com/Luci-4/spotify-map#readme",
+  "description": ""
 }
