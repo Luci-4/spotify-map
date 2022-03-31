@@ -10,6 +10,7 @@ footer{
   background-color: #000;
   color: #fff;
   text-align: center;
+  transition: all .5s ease-in;
 }
 
 h1{
@@ -45,6 +46,7 @@ h1{
   margin: 5px 0;
   border: solid 5px rgb(45, 45, 45);
   border-radius: 8px;
+  user-select: none;
 }
 
 .result .artist-name{

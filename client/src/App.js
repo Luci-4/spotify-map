@@ -1,5 +1,5 @@
 import './App.css'
-import Results from './components/results'
+import AllResults from './components/AllResults'
 import UserInput from './components/UserInput'
 import React, { useState, useEffect } from 'react'
 
@@ -22,7 +22,7 @@ function App() {
                 <h1>Discover new!</h1>
                 <div>
                     <UserInput setQuery = {setQuery}/>
-                    <Results query={query} access_token={token}/>
+                    <AllResults query={query} access_token={token}/>
                 </div>
             </header>
         </div>

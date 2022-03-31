@@ -19,9 +19,9 @@ function Results(props) {
     }, [props])
 
     return (
-        <ul className='results'>
+        <ul className="results">
             {artists.map((artist, index) => (
-                <Result key={index} {...artist} /> 
+                <Result key={index} {...artist} />
             ))}
         </ul>
     )
