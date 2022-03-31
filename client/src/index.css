@@ -12,56 +12,49 @@ footer{
   text-align: center;
 }
 
-footer{
-  display: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Change this */
-  height: 10vh;
-}
-
 h1{
   font-size: 3.5rem;
-  padding-top: 20px;
-}
-
-main{
-  height: 70vh;
-  background-color: #dedede;
-}
-
-.artist-search{
-  width: 80vw;
-  margin: auto;
   padding: 15px;
 }
 
-.artist-input{
-  width: 100%;
+.artist-search{
+  margin-bottom: 20px;
+  width: 40vw;
+  border-radius: 30px;
+  padding: .6rem;
   outline: none;
-  padding: .2rem;
-  border-radius: 20px;
-
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.search-results-wrapper{
-  position: relative;
-}
-
-.search-results{
-  position: absolute;
+.results{
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 80vw;
 }
 
 .result{
-  margin-top: 2px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #7a7a7a;
+  background-color: rgb(68, 68, 68);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 12em;
+  width: 80vw;
+  margin: 5px 0;
+  border: solid 5px rgb(45, 45, 45);
+  border-radius: 8px;
+}
+
+.result .artist-name{
+  margin-left: 8px;
+  font-size: 2.7rem;
+  /* user-select: none; */
+} 
+
+.result img{
+  height: 8rem;
+  width: 8rem;
+  margin-left: 4px;
 }

@@ -9,7 +9,7 @@ function ArtistInput(props) {
                 props.setQuery(e.target.children[0]?.value)
             }}
         >
-            <input type="text"></input>
+            <input className="artist-search" type="text"></input>
         </form>
     )
 }

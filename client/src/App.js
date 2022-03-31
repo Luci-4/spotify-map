@@ -1,7 +1,7 @@
 import './App.css'
 import Results from './components/results'
 import UserInput from './components/UserInput'
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function App() {
     const url = 'https://spotify-map.herokuapp.com/spotify/access'
