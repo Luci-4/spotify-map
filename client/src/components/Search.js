@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Result from './Result'
+import Result from './SearchResult'
 function Results(props) {
     const url = 'https://spotify-map.herokuapp.com/spotify'
     const { access_token, query, setID} = props
@@ -19,7 +19,7 @@ function Results(props) {
 
     return (
         <ul className="results">
-            {artists.map((artist, index) => (
+            {artists.slice(0,6).map((artist, index) => (
                 <Result key={index} setID={setID} {...artist} />
             ))}
         </ul>

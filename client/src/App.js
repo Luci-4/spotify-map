@@ -1,7 +1,7 @@
 import './App.css'
-import AllResults from './components/AllResults'
+import Search from './components/Search'
 import UserInput from './components/UserInput'
-import Related from './components/Related'
+import AllRelated from './components/AllRelated'
 import React, { useState, useEffect } from 'react'
 
 function App() {
@@ -21,14 +21,14 @@ function App() {
     return (
         <div id="App">
             <header>
-                <h1>Discover new!</h1>
+                <h1>Find your new love babe!</h1>
                 <div>
                     <UserInput setQuery={setQuery} />
-                    <AllResults query={query} access_token={token} setID={setID}/>
+                    <Search query={query} access_token={token} setID={setID}/>
                 </div>
             </header>
             <main>
-                <Related id={resID}/>
+                <AllRelated id={resID} access_token={token}/>
             </main>
         </div>
     )

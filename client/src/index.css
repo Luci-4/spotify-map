@@ -60,3 +60,38 @@ h1{
   width: 8rem;
   margin-left: 4px;
 }
+
+main ul{
+  list-style: none;
+  background-color: #efefef;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.related-wrapper{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.related{
+  background-color: #9c9c9c;
+  border: 5px solid #575757;
+  width: inherit;
+  height: inherit;
+}
+
+.related .artist-name{
+  font-size: 2rem;
+  color: white;
+
+}
+
+.related img{
+  width: 80%;
+}
