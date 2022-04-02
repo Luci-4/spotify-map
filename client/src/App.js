@@ -22,9 +22,9 @@ function App() {
                 <h1>Discover new!</h1>
                 <div>
                     <UserInput setQuery = {setQuery}/>
-                    <AllResults query={query} access_token={token}/>
                 </div>
             </header>
+            <AllResults query={query} access_token={token} />
         </div>
     )
 }
