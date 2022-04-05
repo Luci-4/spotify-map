@@ -1,8 +1,8 @@
-import ArtistSearch from 'components/basic/ArtistSearch/ArtistSearch'
+import Artist from 'components/basic/Artist/Artist'
 import { useEffect, useState } from 'react'
 
 function SearchResults(props) {
-    const { access_token,query } = props
+    const { access_token,query,setId} = props
     const [artists, setArtists] = useState([])
     const url = 'https://spotify-map.herokuapp.com/spotify'
     
@@ -17,7 +17,7 @@ function SearchResults(props) {
         })()
     })
 
-    return artists.map((artist, index) => <ArtistSearch key={index} {...artist} />)
+    return artists.map((artist, index) => <Artist key={index} setId={setId} {...artist} />)
 }
 
 export default SearchResults

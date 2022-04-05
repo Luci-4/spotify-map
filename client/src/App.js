@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
-import Header from './components/moreComplex/Header/Header'
+import { useState,useEffect } from 'react'
+import Header from './components/veryComplex/Header/Header'
+import Main from 'components/veryComplex/Main/Main'
 import './App.css'
 
 function App() {
     const [access_token, setToken] = useState('')
+    const [id, setId] = useState(null)
 
     useEffect(() => {
         ;(async () => {
@@ -17,7 +19,8 @@ function App() {
 
     return (
         <div id='App'>
-            <Header access_token={access_token} />
+            <Header access_token={access_token} setId={setId}/>
+            <Main access_token={access_token} id={id}/>
         </div>
     )
 }

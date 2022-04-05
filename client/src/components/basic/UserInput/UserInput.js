@@ -9,8 +9,8 @@ function UserInput(props) {
     }
 
     return (
-        <form onSubmit={search}>
-            <input type='text'></input>
+        <form onSubmit={search} className={style.inputWrapper}>
+            <input type='text' className={style.input}></input>
         </form>
     )
 }
