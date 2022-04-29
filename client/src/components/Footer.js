@@ -33,6 +33,7 @@ function Footer() {
         <StyledFooter>
             <LinkWrapper>
                 <StyledNavlink to='/'/>
+                <StyledNavlink to='/search' />
                 <StyledNavlink to='/mapper' />
             </LinkWrapper>
         </StyledFooter>

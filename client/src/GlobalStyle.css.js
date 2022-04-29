@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         color: #FFF;
         font-size: 22px;
         font-family: 'Montserrat','helvetica',sans-serif;
+        overflow-x:hidden;
     }
 `
 

@@ -18,11 +18,11 @@ const StyledLink = styled(Link)`
         background-color: #fff;
         color: #191414;
     }
-
 `
 
 function DiscoverButton({ children }) {
-    return <StyledLink to='/mapper'>Discover</StyledLink>
+
+    return <StyledLink to='/search'>Discover</StyledLink>
 }   
 
 export default DiscoverButton

@@ -1,11 +1,15 @@
+import { useState } from 'react'
 import ArtistSearch from '../components/ArtistSearch'
+import SearchResults from '../components/SearchResults'
 
-function Mapper(){
+function Mapper() {
+    const [searched, setSearched] = useState([])
 
     return (
-    <div>
-        <ArtistSearch />   
-    </div>
+        <>
+            <ArtistSearch setSearched={setSearched} />
+            <SearchResults searched={searched} />
+        </>
     )
 }
 
